@@ -6,7 +6,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   console.log(queryObject);
   let data = { data: [{ data: "" }] };
 
-  data = await $fetch(`https://json.activelava.net/comments?_start=0&_end=30`);
+  data = await $fetch(`https://api.spacexdata.com/v3/missions`);
 
   res.writeHead(200, { "Content-Type": "application/json" });
   res.write(JSON.stringify(data));
